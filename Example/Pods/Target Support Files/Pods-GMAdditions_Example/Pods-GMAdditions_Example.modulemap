@@ -1,0 +1,6 @@
+framework module Pods_GMAdditions_Example {
+  umbrella header "Pods-GMAdditions_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

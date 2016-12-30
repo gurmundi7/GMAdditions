@@ -1,0 +1,16 @@
+PODS:
+  - GMAdditions (0.1.0)
+
+DEPENDENCIES:
+  - GMAdditions (from `../`)
+
+EXTERNAL SOURCES:
+  GMAdditions:
+    :path: ../
+
+SPEC CHECKSUMS:
+  GMAdditions: 9d67aaad8b71594c3ffcdec686da865ad5c6ce8a
+
+PODFILE CHECKSUM: bbfd6878a48f324fe04db28b1aae1332b4fa9e28
+
+COCOAPODS: 1.1.1

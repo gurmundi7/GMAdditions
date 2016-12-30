@@ -1,0 +1,6 @@
+framework module GMAdditions {
+  umbrella header "GMAdditions-umbrella.h"
+
+  export *
+  module * { export * }
+}

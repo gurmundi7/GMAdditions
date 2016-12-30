@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'GMAdditions_Example' do
+  pod 'GMAdditions', :path => '../'
+
+  target 'GMAdditions_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,6 @@
+framework module Pods_GMAdditions_Tests {
+  umbrella header "Pods-GMAdditions_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

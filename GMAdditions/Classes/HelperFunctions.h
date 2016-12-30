@@ -1,6 +1,5 @@
 //
 //  HelperFunctions.h
-//  Familien Jul
 //
 //  Created by Gurpreet Singh on 23/06/14.
 //  Copyright (c) 2014 Gurpreet Singh. All rights reserved.
@@ -15,6 +14,14 @@
 @interface HelperFunctions : NSObject
 
 void        alert(NSString* Title, NSString* Message);
+
+void        alertViewStandard(NSString* Title, NSString* Message);
+
+void        alertInfo(NSString* Title, NSString* Message);
+
+void        showTopNotification(UIImage * image, NSString * title, NSString * message);
+
+void        showTopNotificationForChat(UIImage * image, NSString * title, NSString * message);
 
 NSString*   DocumentDirectoty();
 
@@ -58,16 +65,27 @@ void        userDefaults_setObject(id object, NSString* key);
 
 id          userDefaults_getObject(NSString* key);
 
+void        userDefaults_removeObject(NSString* key);
+
 NSString*   getFileNameFromPath(NSString* path);
 
 BOOL        isBothStringEqual(NSString* first, NSString* second);
 
+NSString * appentString(NSString * s1, NSString * s2);
+
+NSString * appentStrings(NSArray * strs);
+
 #pragma mark- date functions
+
 NSString* getCurrentTimeString();
+
+NSString* stringFromDateString(NSString * dateStr, NSString* dateStrFormat, NSString* targetFormat);
 
 NSString* stringFromDate(NSDate * date, NSString* format);
 
 NSString* stringFromCurrentDate(NSString* format);
+
+NSDate* dateFromString(NSString * date, NSString* format);
 
 NSString * getNumberWithSuffix(int number);
 
@@ -91,6 +109,10 @@ void HFAddShadowToView(UIView* aView);
 
 void HFApplyTextColorToAllSubViews(UIColor* color, UIView* view);
 
+UIImage * decodeBase64ToImage(NSString * strEncodeData) ;
+
+NSString * encodeToBase64String(UIImage *image) ;
+
 @end
 
 #pragma mark- customFontCategory 
@@ -103,4 +125,21 @@ void HFApplyTextColorToAllSubViews(UIColor* color, UIView* view);
 #pragma mark- UIImage Category
 @interface UIImage (fixOrientation)
 - (UIImage *)fixOrientation;
+- (UIImage*)scaleToSize:(CGSize)size;
+@end
+
+
+//-- Category for json
+@interface NSDictionary (BVJSONString)
+-(NSString*) bv_jsonStringWithPrettyPrint:(BOOL) prettyPrint;
+@end
+
+@interface NSArray (BVJSONString)
+- (NSString *)bv_jsonStringWithPrettyPrint:(BOOL)prettyPrint;
+@end
+
+@interface NSString (Additions)
+
+-(NSString *) removeHTML_TAGS;
+
 @end

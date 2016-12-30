@@ -12,8 +12,18 @@
 		2322A66053A32739D33C5ECE2678A6C3 /* GMAdditions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B01CCFEE5D2B95D2EB217F987198917 /* GMAdditions-dummy.m */; };
 		23651A3CCA9BA32CD215FF25F557A741 /* Pods-GMAdditions_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB41ED2568C8A573C7D647C346BFA879 /* Pods-GMAdditions_Example-dummy.m */; };
 		66273ADF2567F56CCD05C85A155A98E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		93D80EA51E167FE8001D2149 /* HelperFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D80EA31E167FE8001D2149 /* HelperFunctions.h */; };
-		93D80EA61E167FE8001D2149 /* HelperFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80EA41E167FE8001D2149 /* HelperFunctions.m */; };
+		93D80EB41E168A24001D2149 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D80EA71E168A24001D2149 /* Constants.h */; };
+		93D80EB51E168A24001D2149 /* HelperFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D80EA81E168A24001D2149 /* HelperFunctions.h */; };
+		93D80EB61E168A24001D2149 /* HelperFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80EA91E168A24001D2149 /* HelperFunctions.m */; };
+		93D80EB71E168A24001D2149 /* ImagePreviewViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D80EAB1E168A24001D2149 /* ImagePreviewViewController.h */; };
+		93D80EB81E168A24001D2149 /* ImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80EAC1E168A24001D2149 /* ImagePreviewViewController.m */; };
+		93D80EB91E168A24001D2149 /* NSObject+JsonParsing.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D80EAD1E168A24001D2149 /* NSObject+JsonParsing.h */; };
+		93D80EBA1E168A24001D2149 /* NSObject+JsonParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80EAE1E168A24001D2149 /* NSObject+JsonParsing.m */; };
+		93D80EBB1E168A24001D2149 /* UIAlertController+Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D80EAF1E168A24001D2149 /* UIAlertController+Helper.h */; };
+		93D80EBC1E168A24001D2149 /* UIAlertController+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80EB01E168A24001D2149 /* UIAlertController+Helper.m */; };
+		93D80EBD1E168A24001D2149 /* UIViewController+BasicFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D80EB11E168A24001D2149 /* UIViewController+BasicFunctions.h */; };
+		93D80EBE1E168A24001D2149 /* UIViewController+BasicFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D80EB21E168A24001D2149 /* UIViewController+BasicFunctions.m */; };
+		93D80EBF1E168A24001D2149 /* WebServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 93D80EB31E168A24001D2149 /* WebServices.h */; };
 		9F6BDDEA9B7B61A4B29057257F532610 /* Pods-GMAdditions_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 238A746881FCE4EDB61880F3076CA896 /* Pods-GMAdditions_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C87AF0AD7BFB37F1EF83846D05A91809 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		E0DB873405E0557B68E41F7A989B32A6 /* Pods-GMAdditions_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B429057CD8601622A619EE156C8387C7 /* Pods-GMAdditions_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,8 +58,18 @@
 		82013D819DE27AB754437EF7E31A28BC /* Pods-GMAdditions_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GMAdditions_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		905FF5DCF078B997A504FD1E64A08DCC /* Pods-GMAdditions_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GMAdditions_Tests-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93D80EA31E167FE8001D2149 /* HelperFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperFunctions.h; sourceTree = "<group>"; };
-		93D80EA41E167FE8001D2149 /* HelperFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperFunctions.m; sourceTree = "<group>"; };
+		93D80EA71E168A24001D2149 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		93D80EA81E168A24001D2149 /* HelperFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperFunctions.h; sourceTree = "<group>"; };
+		93D80EA91E168A24001D2149 /* HelperFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperFunctions.m; sourceTree = "<group>"; };
+		93D80EAB1E168A24001D2149 /* ImagePreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePreviewViewController.h; sourceTree = "<group>"; };
+		93D80EAC1E168A24001D2149 /* ImagePreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePreviewViewController.m; sourceTree = "<group>"; };
+		93D80EAD1E168A24001D2149 /* NSObject+JsonParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JsonParsing.h"; sourceTree = "<group>"; };
+		93D80EAE1E168A24001D2149 /* NSObject+JsonParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JsonParsing.m"; sourceTree = "<group>"; };
+		93D80EAF1E168A24001D2149 /* UIAlertController+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Helper.h"; sourceTree = "<group>"; };
+		93D80EB01E168A24001D2149 /* UIAlertController+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Helper.m"; sourceTree = "<group>"; };
+		93D80EB11E168A24001D2149 /* UIViewController+BasicFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BasicFunctions.h"; sourceTree = "<group>"; };
+		93D80EB21E168A24001D2149 /* UIViewController+BasicFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BasicFunctions.m"; sourceTree = "<group>"; };
+		93D80EB31E168A24001D2149 /* WebServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServices.h; sourceTree = "<group>"; };
 		960CF1CC884DD83310098F63271BA750 /* Pods_GMAdditions_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMAdditions_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		984F8680E321C13D0F0F79CE31DDB563 /* GMAdditions-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GMAdditions-prefix.pch"; sourceTree = "<group>"; };
 		9D1E6CFAE9C74332DCCA97C03541E166 /* Pods-GMAdditions_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GMAdditions_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -121,8 +141,17 @@
 		1EFC23F83D231F1BC1F9A94DCE45D891 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				93D80EA31E167FE8001D2149 /* HelperFunctions.h */,
-				93D80EA41E167FE8001D2149 /* HelperFunctions.m */,
+				93D80EA71E168A24001D2149 /* Constants.h */,
+				93D80EA81E168A24001D2149 /* HelperFunctions.h */,
+				93D80EA91E168A24001D2149 /* HelperFunctions.m */,
+				93D80EAA1E168A24001D2149 /* ImagePreviewViewController */,
+				93D80EAD1E168A24001D2149 /* NSObject+JsonParsing.h */,
+				93D80EAE1E168A24001D2149 /* NSObject+JsonParsing.m */,
+				93D80EAF1E168A24001D2149 /* UIAlertController+Helper.h */,
+				93D80EB01E168A24001D2149 /* UIAlertController+Helper.m */,
+				93D80EB11E168A24001D2149 /* UIViewController+BasicFunctions.h */,
+				93D80EB21E168A24001D2149 /* UIViewController+BasicFunctions.m */,
+				93D80EB31E168A24001D2149 /* WebServices.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -170,6 +199,15 @@
 				0074D88ED95F593810595B789B76BF36 /* Products */,
 				9E1FA84D43C4993CD41D6AEE2D485FAE /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		93D80EAA1E168A24001D2149 /* ImagePreviewViewController */ = {
+			isa = PBXGroup;
+			children = (
+				93D80EAB1E168A24001D2149 /* ImagePreviewViewController.h */,
+				93D80EAC1E168A24001D2149 /* ImagePreviewViewController.m */,
+			);
+			path = ImagePreviewViewController;
 			sourceTree = "<group>";
 		};
 		9C0F66E694A737EA5C02C1E2F5BF2DDF /* Pods-GMAdditions_Example */ = {
@@ -232,7 +270,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93D80EA51E167FE8001D2149 /* HelperFunctions.h in Headers */,
+				93D80EB51E168A24001D2149 /* HelperFunctions.h in Headers */,
+				93D80EB41E168A24001D2149 /* Constants.h in Headers */,
+				93D80EBD1E168A24001D2149 /* UIViewController+BasicFunctions.h in Headers */,
+				93D80EB71E168A24001D2149 /* ImagePreviewViewController.h in Headers */,
+				93D80EBB1E168A24001D2149 /* UIAlertController+Helper.h in Headers */,
+				93D80EBF1E168A24001D2149 /* WebServices.h in Headers */,
+				93D80EB91E168A24001D2149 /* NSObject+JsonParsing.h in Headers */,
 				0D9E31A79128C6C8CE5CF5E3010B87EF /* GMAdditions-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,7 +386,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2322A66053A32739D33C5ECE2678A6C3 /* GMAdditions-dummy.m in Sources */,
-				93D80EA61E167FE8001D2149 /* HelperFunctions.m in Sources */,
+				93D80EB81E168A24001D2149 /* ImagePreviewViewController.m in Sources */,
+				93D80EBA1E168A24001D2149 /* NSObject+JsonParsing.m in Sources */,
+				93D80EBE1E168A24001D2149 /* UIViewController+BasicFunctions.m in Sources */,
+				93D80EB61E168A24001D2149 /* HelperFunctions.m in Sources */,
+				93D80EBC1E168A24001D2149 /* UIAlertController+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

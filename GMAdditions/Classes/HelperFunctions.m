@@ -1,13 +1,13 @@
 //
 //  HelperFunctions.m
-//  Familien Jul
 //
 //  Created by Gurpreet Singh on 23/06/14.
 //  Copyright (c) 2014 Gurpreet Singh. All rights reserved.
 //
 
 #import "HelperFunctions.h"
-//#import "Reachability.h"
+#import "EHPlainAlert.h"
+#import "HDNotificationView.h"
 
 @implementation HelperFunctions
 
@@ -58,9 +58,45 @@ NSString* DocumentDirectoty()
     return documentPath_;
 }
 void alert(NSString* Title, NSString* Message){
+    
+    [EHPlainAlert updateAlertPosition:ViewAlertPositionTop];
+    [EHPlainAlert showAlertWithTitle:(Title.length)?Title:@"Alert" message:Message type:ViewAlertPanic];
+}
+
+void alertViewStandard(NSString* Title, NSString* Message)
+{
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:Title message:Message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
 }
+
+void alertInfo(NSString* Title, NSString* Message){
+    
+    [EHPlainAlert updateAlertPosition:ViewAlertPositionTop];
+    [EHPlainAlert showAlertWithTitle:(Title.length)?Title:@"Alert" message:Message type:ViewAlertInfo];
+}
+
+void showTopNotificationNoAutoHide(UIImage * image, NSString * title, NSString * message)
+{
+    [HDNotificationView showNotificationViewWithImage:image title:title message:message isAutoHide:NO onTouch:^{
+        
+        [HDNotificationView hideNotificationView];
+    }];
+}
+
+void showTopNotificationForChat(UIImage * image, NSString * title, NSString * message)
+{
+    [HDNotificationView showNotificationViewWithImage:image title:title message:message isAutoHide:YES onTouch:^{
+        
+        [HDNotificationView hideNotificationView];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"OpenChatScreen" object:nil];
+    }];
+}
+
+void showTopNotification(UIImage * image, NSString * title, NSString * message)
+{
+    [HDNotificationView showNotificationViewWithImage:image title:title message:message];
+}
+
 NSArray * listOfFilesAtPath(NSString *path)
 {
     return [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:NULL];
@@ -126,9 +162,14 @@ NSUserDefaults* userDefaults() {
 }
 void userDefaults_setObject(id object, NSString* key) {
     [userDefaults() setObject:object forKey:key];
+    [userDefaults() synchronize];
 }
 id userDefaults_getObject(NSString* key) {
     return [userDefaults() objectForKey:key];
+}
+
+void userDefaults_removeObject(NSString* key) {
+    [userDefaults() removeObjectForKey:key];
 }
 
 NSString* getFileNameFromPath(NSString* path)
@@ -145,13 +186,44 @@ BOOL isBothStringEqual(NSString* first, NSString* second)
         return NO;
     return [first isEqualToString:second];
 }
-@end
+
+NSString * appentString(NSString * s1, NSString * s2)
+{
+    return appentStrings(@[s1,s2]);
+}
+NSString * appentStrings(NSArray * strs)
+{
+    if (strs.count) {
+        NSString * str = strs[0];
+        for (int i = 1; i < strs.count; i++) {
+            NSString * s = strs[i];
+            str = [str stringByAppendingString:s];
+        }
+        return str;
+    }
+    
+    return nil;
+}
+
+
+NSString* stringFromDateString(NSString * dateStr, NSString* dateStrFormat, NSString* targetFormat)
+{
+    NSDate * date = dateFromString(dateStr, dateStrFormat);
+    return stringFromDate(date, targetFormat);
+}
 
 NSString* stringFromDate(NSDate * date, NSString* format) {
-    if (!date) return 0;
+    if (!date) return nil;
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:format];
     return [df stringFromDate:date];
+}
+
+NSDate* dateFromString(NSString * dateStr, NSString* format) {
+    if (!dateStr) return nil;
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:format];
+    return [df dateFromString:dateStr];
 }
 
 NSString* getCurrentTimeString()
@@ -210,6 +282,21 @@ NSString * getNumberWithSuffix(int number)
     NSString *completeAsString = [NSString stringWithFormat:@"%d%@",number,suffix];
     return completeAsString;
 }
+
+
+NSString * encodeToBase64String(UIImage *image) {
+    if (!image) {
+        return @"";
+    }
+    return [UIImagePNGRepresentation(image) base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
+}
+
+UIImage * decodeBase64ToImage(NSString * strEncodeData) {
+    NSData *data = [[NSData alloc]initWithBase64EncodedString:strEncodeData options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    return [UIImage imageWithData:data];
+}
+
+@end
 
 #pragma mark- customFontCategory
 @implementation UIFont (customFont)
@@ -303,6 +390,28 @@ NSString * getNumberWithSuffix(int number)
     CGImageRelease(cgimg);
     return img;
 }
+
+
+-(UIImage*)scaleToSize:(CGSize)size
+{
+    // Create a bitmap graphics context
+    // This will also set it as the current context
+    UIGraphicsBeginImageContext(size);
+    
+    // Draw the scaled image in the current context
+    [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    
+    // Create a new image from current context
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // Pop the current context from the stack
+    UIGraphicsEndImageContext();
+    
+    // Return our new scaled image
+    return scaledImage;
+}
+
+
 void HFAddShadowToViewWithOffset(UIView* aView, CGSize offset)
 {
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:aView.bounds];
@@ -337,6 +446,52 @@ void HFApplyTextColorToAllSubViews(UIColor* color, UIView* view)
             HFApplyTextColorToAllSubViews(color, view);
         }
     }
+}
+
+@end
+
+
+@implementation NSDictionary (BVJSONString)
+
+-(NSString*) bv_jsonStringWithPrettyPrint:(BOOL) prettyPrint {
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self
+                                                       options:(NSJSONWritingOptions)    (prettyPrint ? NSJSONWritingPrettyPrinted : 0)
+                                                         error:&error];
+    
+    if (! jsonData) {
+        NSLog(@"bv_jsonStringWithPrettyPrint: error: %@", error.localizedDescription);
+        return @"{}";
+    } else {
+        return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+}
+@end
+
+@implementation NSArray (BVJSONString)
+-(NSString*) bv_jsonStringWithPrettyPrint:(BOOL) prettyPrint {
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self
+                                                       options:(NSJSONWritingOptions) (prettyPrint ? NSJSONWritingPrettyPrinted : 0)
+                                                         error:&error];
+    
+    if (! jsonData) {
+        NSLog(@"bv_jsonStringWithPrettyPrint: error: %@", error.localizedDescription);
+        return @"[]";
+    } else {
+        return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+}
+@end
+
+@implementation NSString (Additions)
+
+-(NSString *) removeHTML_TAGS {
+    NSRange r;
+    NSString *s = [self copy];
+    while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        s = [s stringByReplacingCharactersInRange:r withString:@""];
+    return s;
 }
 
 @end

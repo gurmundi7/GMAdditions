@@ -77,24 +77,24 @@ void alertInfo(NSString* Title, NSString* Message){
 
 void showTopNotificationNoAutoHide(UIImage * image, NSString * title, NSString * message)
 {
-    [HDNotificationView showNotificationViewWithImage:image title:title message:message isAutoHide:NO onTouch:^{
-        
-        [HDNotificationView hideNotificationView];
-    }];
+//    [HDNotificationView showNotificationViewWithImage:image title:title message:message isAutoHide:NO onTouch:^{
+//        
+//        [HDNotificationView hideNotificationView];
+//    }];
 }
 
 void showTopNotificationForChat(UIImage * image, NSString * title, NSString * message)
 {
-    [HDNotificationView showNotificationViewWithImage:image title:title message:message isAutoHide:YES onTouch:^{
-        
-        [HDNotificationView hideNotificationView];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"OpenChatScreen" object:nil];
-    }];
+//    [HDNotificationView showNotificationViewWithImage:image title:title message:message isAutoHide:YES onTouch:^{
+//        
+//        [HDNotificationView hideNotificationView];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"OpenChatScreen" object:nil];
+//    }];
 }
 
 void showTopNotification(UIImage * image, NSString * title, NSString * message)
 {
-    [HDNotificationView showNotificationViewWithImage:image title:title message:message];
+//    [HDNotificationView showNotificationViewWithImage:image title:title message:message];
 }
 
 NSArray * listOfFilesAtPath(NSString *path)

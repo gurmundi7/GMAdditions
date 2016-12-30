@@ -141,10 +141,10 @@
 		1EFC23F83D231F1BC1F9A94DCE45D891 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				93D80EAA1E168A24001D2149 /* ImagePreviewViewController */,
 				93D80EA71E168A24001D2149 /* Constants.h */,
 				93D80EA81E168A24001D2149 /* HelperFunctions.h */,
 				93D80EA91E168A24001D2149 /* HelperFunctions.m */,
-				93D80EAA1E168A24001D2149 /* ImagePreviewViewController */,
 				93D80EAD1E168A24001D2149 /* NSObject+JsonParsing.h */,
 				93D80EAE1E168A24001D2149 /* NSObject+JsonParsing.m */,
 				93D80EAF1E168A24001D2149 /* UIAlertController+Helper.h */,

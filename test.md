@@ -168,39 +168,3 @@ Table of contents
 
 
 [TOC]
-
-
-Flow chart
---
-
-```flow
-st=>start: Application Launched
-e=>end
-login=>operation: Login Screen
-overview=>operation: Overview Screen
-leftscreen=>operation: Left Menu Screen
-profilescreen=>operation: Profile Screen
-condremembered=>condition: User Remembered?
-condLogin=>condition: Authenticate user
-condleftmenu=>condition: Open Left Menu?
-condopenoverview=>condition: Open OverView Screen?
-condopenprofile=>condition: Open Profile Screen?
-current=>operation: Stay on Currrent
-
-st->condremembered
-condremembered(no)->login
-condremembered(yes)->condLogin
-login->condLogin
-condLogin(yes)->overview
-condLogin(no)->login
-overview->condleftmenu
-condleftmenu(no)->current
-condleftmenu(yes)->leftscreen
-leftscreen->condopenoverview
-condopenoverview(no)->condopenprofile
-condopenoverview(yes)->overview
-condopenprofile(yes)->profilescreen
-condopenprofile(no)->current
-profilescreen->condleftmenu
-current->condleftmenu
-```

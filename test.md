@@ -162,9 +162,3 @@ Pods
 #### [MTBBarcodeScanner](#)
 #### [Chester](#)
 
-
-Table of contents
---
-
-
-[TOC]
